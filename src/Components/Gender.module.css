@@ -1,0 +1,43 @@
+.gender {
+  margin-bottom: 10px;
+}
+.radioBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+  background-color: rgb(220, 231, 240);
+  width: 182px;
+  height: 30px;
+  border-radius: 5px;
+  padding-right: 15px;
+}
+.radioBox div {
+  display: flex;
+  flex-direction: row;
+  margin-right: 3px;
+}
+
+.gender label {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+}
+.type {
+  font-size: 14px;
+}
+.radioBox input,
+label {
+  cursor: pointer;
+}
+.invalid {
+  margin-bottom: 15px;
+}
+.invalid label {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  color: red;
+}
+.error{
+  color: red;
+  font-size: 12px;
+}

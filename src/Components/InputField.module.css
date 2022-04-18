@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Shadows+Into+Light&display=swap");
+.input {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 8px;
+  margin-bottom: 15px;
+}
+.input input {
+  border: none;
+  border-bottom: 1px solid black;
+  margin-top: 3px;
+  height: 30px;
+  font-size: 16px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.input input:active,
+.input input:focus {
+  outline: none;
+  background-color: rgb(215, 227, 237);
+  border-radius: 4px;
+}
+.input label {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+}
+.invalid {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 8px;
+  margin-bottom: 15px;
+}
+.invalid label {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  color: red;
+  display: flex;
+  flex-direction: row;
+  /* background-color: aqua; */
+}
+
+.invalid input {
+  border: none;
+  border-bottom: 1px solid rgb(255, 0, 0);
+  background-color: rgb(230, 166, 166);
+  margin-top: 3px;
+  height: 30px;
+  font-size: 16px;
+  border-radius: 4px;
+}
+.invalid input:active,
+.invalid input:focus {
+  outline: none;
+  background-color: rgb(215, 227, 237);
+  border-radius: 4px;
+}
+.error {
+  color: red;
+  font-size: 10px;
+}

@@ -1,0 +1,47 @@
+.dropdown .label {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+}
+.select_field {
+  display: flex;
+  justify-content: space-between;
+  width: 190px;
+  border-radius: 5px;
+  background-color: rgb(220, 231, 240);
+  padding: 5px;
+  margin-top: 10px;
+}
+.select_field button {
+  margin-right: 10px;
+  border: none;
+  background-color: rgb(220, 231, 240);
+  cursor: pointer;
+}
+.options {
+  background-color: rgb(220, 231, 240);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 90px;
+  overflow-y: scroll;
+  margin-top: 10px;
+}
+.dropdown {
+  margin-left: 10px;
+  margin-right: 8px;
+  margin-bottom: 15px;
+}
+/* .dropdown:active,
+.dropdown:focus {
+  outline: none;
+  border: none;
+  background-color: rgb(220, 231, 240);
+} */
+.invalid .label {
+  color: red;
+}
+.error {
+  color: red;
+  font-size: 10px;
+}
