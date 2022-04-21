@@ -1,5 +1,8 @@
 .gender {
+  margin-left: 10px;
   margin-bottom: 10px;
+  /* background-color: aqua; */
+  /* margin-left: 10px; */
 }
 .radioBox {
   display: flex;
@@ -7,10 +10,9 @@
   align-items: center;
   margin-top: 10px;
   background-color: rgb(220, 231, 240);
-  width: 182px;
+  width: 250px;
   height: 30px;
   border-radius: 5px;
-  padding-right: 15px;
 }
 .radioBox div {
   display: flex;
@@ -37,7 +39,18 @@ label {
   font-size: 18px;
   color: red;
 }
-.error{
+.error {
   color: red;
   font-size: 12px;
+}
+@media (max-width: 560px) {
+  .gender {
+    margin-left: 10px;
+  }
+  .radioBox {
+    width: 98%;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

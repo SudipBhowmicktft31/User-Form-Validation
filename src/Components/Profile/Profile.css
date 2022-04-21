@@ -14,29 +14,27 @@ h2 {
 }
 .name {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  /* background-color: aqua; */
 }
+#input_div {
+  width: 50%;
+}
+/* .name div {
+  width: 50%;
+} */
 .label {
   font-family: "Josefin Sans", sans-serif;
   font-size: 18px;
 }
-.contact {
-  display: flex;
-  justify-content: space-between;
-}
-
-.pwd {
-  display: flex;
-  justify-content: space-between;
-}
 .prof_gen {
   display: flex;
-  /* justify-content: space-between; */
 }
 
 .hobby_skill {
   display: flex;
-  justify-content: space-between;
 }
 #submit {
   width: 200px;
@@ -60,4 +58,22 @@ input[disabled] {
 .button {
   text-align: center;
   padding: 20px;
+}
+
+@media (max-width: 560px) {
+  .name {
+    display: flex;
+    flex-direction: column;
+  }
+  #input_div {
+    width: 100%;
+  }
+  .prof_gen {
+    display: flex;
+    flex-direction: column;
+  }
+  .hobby_skill {
+    display: flex;
+    flex-direction: column;
+  }
 }

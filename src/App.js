@@ -1,5 +1,5 @@
 import "./App.css";
-import Profile from "./Components/Profile";
+import Profile from "./Components/Profile/Profile";
 
 function App() {
   return (

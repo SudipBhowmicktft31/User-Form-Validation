@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   margin-left: 10px;
-  margin-right: 155px;
+  margin-right: 15px;
   margin-bottom: 15px;
 }
 .profession label {
@@ -14,11 +14,12 @@
   border: 0px;
   outline: 0px;
   scroll-behavior: smooth;
-  width: 180px;
-  padding: 5px;
+  padding: 7px;
   margin-top: 10px;
   cursor: pointer;
   background-color: rgb(220, 231, 240);
+  margin-bottom: 10px;
+  width: 250px;
 }
 .options label,
 input {
@@ -45,4 +46,9 @@ option:active {
   font-family: "Josefin Sans", sans-serif;
   font-size: 18px;
   color: red;
+}
+@media (max-width: 560px) {
+  .dropdown {
+    width: 100%;
+  }
 }

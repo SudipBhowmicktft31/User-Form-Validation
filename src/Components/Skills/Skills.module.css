@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Shadows+Into+Light&display=swap");
+.skills {
+  margin-left: 10px;
+}
 .skills .label {
   font-family: "Josefin Sans", sans-serif;
   font-size: 18px;
@@ -6,17 +9,18 @@
 .checkbox {
   background-color: rgb(220, 231, 240);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin-top: 10px;
   margin-right: 8px;
-  width: 190px;
+  width: 95%;
   border-radius: 5px;
-  padding: 5px;
 }
 .checkbox label {
   display: flex;
   margin-top: 5px;
   cursor: pointer;
+  width: 50%;
 }
 .checkbox input {
   cursor: pointer;
@@ -28,4 +32,18 @@
 .invalid .label {
   color: red;
   font-family: "Josefin Sans", sans-serif;
+}
+@media (max-width: 560px) {
+  .skills{
+    margin-right: 20px;
+  }
+  .checkbox {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 103%;
+  }
+  .checkbox label {
+    width: 50%;
+  }
 }

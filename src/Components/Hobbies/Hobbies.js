@@ -3,6 +3,14 @@ import styles from "./Hobbies.module.css";
 const Hobbies = (props) => {
   const [isShow, setIsShow] = useState(false);
   const [isClicked, setIsCliked] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const showErrorHandler = () => {
+    if (props.errorMsg) {
+      setIsError(true);
+    } else {
+      setIsError(false);
+    }
+  };
   const hobbies = [
     "Football",
     "Cricket",
@@ -26,11 +34,11 @@ const Hobbies = (props) => {
     setIsShow(false);
     setIsCliked(false);
   };
-  const hobbiesInputClass = !props.errorMsg ? styles.dropdown : styles.invalid;
+  const hobbiesInputClass = !isError ? styles.dropdown : styles.invalid;
   return (
     <div className={hobbiesInputClass}>
       <label className={styles.label}>
-        {props.errorMsg ? <div>{props.label}*</div> : <div>{props.label}</div>}
+        {isError ? <div>{props.label}*</div> : <div>{props.label}</div>}
       </label>
       <div className={styles.select_field}>
         Choose options
@@ -56,13 +64,14 @@ const Hobbies = (props) => {
                 name={hobby}
                 id={hobby}
                 onChange={props.onChange}
+                onBlur={showErrorHandler}
               />
               {hobby}
             </label>
           ))}
         </div>
       )}
-      {props.errorMsg && <p className={styles.error}>{props.errorMsg}</p>}
+      {isError && <p className={styles.error}>{props.errorMsg}</p>}
     </div>
   );
 };

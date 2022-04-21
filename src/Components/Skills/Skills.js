@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Skills.module.css";
 const Skills = (props) => {
+  const [isError, setIsError] = useState(false);
+  const showErrorHandler = () => {
+    if (props.errorMsg) {
+      setIsError(true);
+    } else {
+      setIsError(false);
+    }
+  };
   const skills = [
     "HTML",
     "CSS",
@@ -14,11 +22,11 @@ const Skills = (props) => {
     "Android",
     ".Net",
   ];
-  const skillsInputClass = !props.errorMsg ? styles.skills : styles.invalid;
+  const skillsInputClass = !isError ? styles.skills : styles.invalid;
   return (
     <div className={skillsInputClass}>
       <label className={styles.label}>
-        {props.errorMsg ? <div>Skills*</div> : <div>Skills</div>}
+        {!isError ? <div>Skills</div> : <div>Skills*</div>}
       </label>
       <div className={styles.checkbox}>
         {skills.map((skill) => (
@@ -30,12 +38,13 @@ const Skills = (props) => {
               name={skill}
               id={skill}
               onChange={props.onChange}
+              onBlur={showErrorHandler}
             />
             {skill}
           </label>
         ))}
       </div>
-      {props.errorMsg && <p className={styles.error}>{props.errorMsg}</p>}
+      {isError && <p className={styles.error}>{props.errorMsg}</p>}
     </div>
   );
 };

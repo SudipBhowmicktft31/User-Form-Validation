@@ -5,10 +5,12 @@
 .select_field {
   display: flex;
   justify-content: space-between;
-  width: 190px;
+  width: 245px;
   border-radius: 5px;
   background-color: rgb(220, 231, 240);
-  padding: 5px;
+  padding-top:5px;
+  padding-bottom:5px;
+  padding-left:5px;
   margin-top: 10px;
 }
 .select_field button {
@@ -22,7 +24,7 @@
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 250px;
   height: 90px;
   overflow-y: scroll;
   margin-top: 10px;
@@ -40,8 +42,17 @@
 } */
 .invalid .label {
   color: red;
+  font-family: "Josefin Sans", sans-serif;
 }
 .error {
   color: red;
   font-size: 10px;
+}
+@media (max-width: 560px) {
+  .select_field {
+    width: 99%;
+  }
+  .options {
+    width: 100%;
+  }
 }

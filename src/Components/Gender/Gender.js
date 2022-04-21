@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Gender.module.css";
 const Gender = (props) => {
+  const [isError, setIsError] = useState(false);
   const genders = ["Male", "Female", "Others"];
-  const genderInputClass = !props.errorMsg ? styles.gender : styles.invalid;
+  const showErrorHandler = () => {
+    if (props.errorMsg) {
+      setIsError(true);
+    } else {
+      setIsError(false);
+    }
+  };
+
+  const genderInputClass = !isError ? styles.gender : styles.invalid;
 
   return (
     <div className={genderInputClass}>
-      <label>{props.errorMsg ? <div>Gender*</div> : <div>Gender</div>}</label>
+      <label>{!isError ? <div>Gender</div> : <div>Gender*</div>}</label>
       <div className={styles.radioBox}>
         {genders.map((gender) => (
           <div key={gender}>
@@ -17,6 +26,7 @@ const Gender = (props) => {
               value={gender}
               key={gender}
               onChange={props.onChange}
+              onBlur={showErrorHandler}
             />
             <div className={styles.type} htmlFor={gender}>
               {gender}
@@ -24,9 +34,7 @@ const Gender = (props) => {
           </div>
         ))}
       </div>
-      {props.errorMsg.trim() !== 0 && (
-        <p className={styles.error}>{props.errorMsg}</p>
-      )}
+      {isError && <p className={styles.error}>{props.errorMsg}</p>}
     </div>
   );
 };
